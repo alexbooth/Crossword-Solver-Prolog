@@ -1,6 +1,4 @@
-Jackson Mandeville
-Theo Chitayat
-Alexander Booth
+Jackson Mandeville, Theo Chitayat, Alexander Booth
 
 Using Prolog, a language based on propositional logic, we constructed a basic crossword puzzle solver, using a simple natural language processor to understand simple clues.
 
@@ -9,17 +7,17 @@ The second uses triples and natural language processing to understand straightfo
 
 For the crossword solver that doesn't use clues:
 
-Load file cw_no_clues.pl in SWI-PL
-?- [cw_no_clue].
+    Load file cw_no_clues.pl in SWI-PL
+    ?- [cw_no_clue].
 
-To find a solution to the fruit crossword:
-?- fruits_cw(W1,W2,W3,W4,W5).
+    To find a solution to the fruit crossword:
+    ?- fruits_cw(W1,W2,W3,W4,W5).
 
-To find a solution to our custom_cw:
-?- my_cw(W1,W2,W3,W4,W5,W6,W7,W8,W9).
+    To find a solution to our custom_cw:
+    ?- my_cw(W1,W2,W3,W4,W5,W6,W7,W8,W9).
 
-To find a solution to the other_cw:
-?- other_cw(W1,W2,W3,W4,W5,W6,W7,W8,W9,W10,W11,W12).
+    To find a solution to the other_cw:
+    ?- other_cw(W1,W2,W3,W4,W5,W6,W7,W8,W9,W10,W11,W12).
 
 Notice that there are multiple solutions to the fruit crossword and our custom crossword.
 We purposefully added words to our word bank which would cause these puzzles to have more
@@ -30,16 +28,30 @@ To solve this issue, we created another program, cw_with_clues.pl, that parses l
 in an attempt to prune the domain of possible solutions to a crossword. 
 
 
-Load file cw_with_clues.pl in SWI-PL
-?- [cw_with_clues].
+    Load file cw_with_clues.pl in SWI-PL
+    ?- [cw_with_clues].
 
-To find a solution to fruit_cw:
-fruits_cw(W1,W2,W3,W4,W5).
+    To find a solution to fruit_cw:
+    fruits_cw(W1,W2,W3,W4,W5).
 
-To find a solution to our custom_cw:
-other_cw(W1,W2,W3,W4,W5,W6,W7,W8,W9,W10,W11,W12).
+    To find a solution to our custom_cw:
+    other_cw(W1,W2,W3,W4,W5,W6,W7,W8,W9,W10,W11,W12).
 
 Notice that our program now finds a single solution to each of these crosswords.
 
+
+Here are the actual crosswords that the program is solving.
+
+my_cw:
+
+<img src="https://raw.githubusercontent.com/alexdbooth/Crossword-Solver-Prolog/master/images/custom_cw.jpg" width="350"><img src="https://raw.githubusercontent.com/alexdbooth/Crossword-Solver-Prolog/master/images/custom_solution.jpg" width="350">
+
+fruits_cw:
+
+<img src="https://raw.githubusercontent.com/alexdbooth/Crossword-Solver-Prolog/master/images/fruits_cw.png" width="300">
+
+other_cw:
+
+<img src="https://raw.githubusercontent.com/alexdbooth/Crossword-Solver-Prolog/master/images/other_cw.jpg" width="350">
 
 
